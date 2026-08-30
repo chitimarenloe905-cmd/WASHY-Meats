@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WASHY Meats | Quality You Can Taste</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #090909;
+            color: white;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0,0,0,0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 900;
+            line-height: 0.9;
+        }
+
+        .logo span {
+            color: #e51b23;
+            display: block;
+            font-family: cursive;
+            font-size: 28px;
+            margin-left: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e51b23;
+        }
+
+        .contact-top {
+            background: #d71920;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .contact-top small {
+            display: block;
+            font-size: 11px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 700px;
+            padding: 150px 7% 80px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.95),
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.25)
+                ),
+                url("https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .script {
+            color: #e51b23;
+            font-size: 28px;
+            font-family: cursive;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 95px);
+            line-height: 0.9;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: #e51b23;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.5;
+            margin: 25px 0;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 28px;
+            border-radius: 7px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border: 2px solid #e51b23;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-red {
+            background: #e51b23;
+        }
+
+        .btn-red:hover {
+            background: #a90f15;
+        }
+
+        .btn-dark {
+            background: rgba(0,0,0,0.6);
+            border-color: white;
+        }
+
+        .btn-dark:hover {
+            background: #e51b23;
+            border-color: #e51b23;
+        }
+
+        /* ================= WHATSAPP ================= */
+
+        .whatsapp {
+            position: absolute;
+            right: 5%;
+            bottom: 70px;
+            background: #111;
+            border: 2px solid #25D366;
+            border-radius: 15px;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .whatsapp span {
+            color: #25D366;
+            font-size: 20px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .product {
+            background: #111;
+            border: 1px solid #e51b23;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(229,27,35,0.25);
+        }
+
+        .product-image {
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product:hover img {
+            transform: scale(1.08);
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-info h2 {
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+
+        .affordable {
+            color: #e51b23;
+            font-family: cursive;
+            font-size: 21px;
+            margin: 8px 0;
+        }
+
+        .product-info p {
+            color: #ddd;
+        }
+
+        /* ================= ORDER ================= */
+
+        .order-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px 20px 70px;
+        }
+
+        .order-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: #0d0d0d;
+            border: 1px solid #e51b23;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .order-title {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .order-title span {
+            color: #e51b23;
+        }
+
+        .order-box p {
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 17px;
+            margin-bottom: 15px;
+            background: #181818;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        select:focus,
+        input:focus {
+            outline: none;
+            border-color: #e51b23;
+        }
+
+        .cart {
+            background: #151515;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+
+        #cartItems {
+            min-height: 120px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .remove {
+            color: #e51b23;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .checkout {
+            width: 100%;
+            padding: 17px;
+            background: #e51b23;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background: linear-gradient(90deg, #8e0d12, #d71920, #8e0d12);
+            padding: 40px 20px;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 20px;
+            border-right: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .contact-card:last-child {
+            border-right: none;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            line-height: 1.6;
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .feature {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #aaa;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+            padding: 45px 20px;
+            background: #050505;
+        }
+
+        .footer-title {
+            font-size: 34px;
+            color: #e51b23;
+            font-family: cursive;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #888;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .contact-top {
+                font-size: 12px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .order-box {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.3);
+            }
+
+            .whatsapp {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                display: inline-block;
+                margin-top: 30px;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .hero {
+                padding-top: 130px;
+                min-height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .contact-top {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <nav>
+
+        <div class="logo">
+            🔪 WASHY
+            <span>Meats</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">About Us</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#order">Order Now</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="contact-top">
+            <small>MORE INFO</small>
+            +263 773267077
+        </div>
+
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="script">
+            Quality You Can Taste
+        </div>
+
+        <h1>
+            Meat You<br>
+            <span>Can Trust!</span>
+        </h1>
+
+        <p>
+            Premium quality meat, freshly cut for you.
+            Perfect for every meal, every time.
+        </p>
+
+        <div class="buttons">
+            <a href="#order" class="btn btn-red">
+                🛒 ORDER NOW
+            </a>
+
+            <a href="#products" class="btn btn-dark">
+                OUR PRODUCTS
+            </a>
+        </div>
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/263773353587"
+            target="_blank"
+        >
+            🟢 Chat with us on WhatsApp<br>
+            <span>+263 773353587</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="section" id="products">
+
+    <div class="products">
+
+        <!-- BEEF -->
+
+        <div class="product">
+
+            <div class="product-image">
+                <img
+                    src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80"
+                    alt="Beef"
+                >
+            </div>
+
+            <div class="product-info">
+                <h2>🥩 Beef</h2>
+
+                <div class="affordable">
+                    Affordable Prices
+                </div>
+
+                <p>
+                    Fresh, tender and full of flavor.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- SAUSAGE -->
+
+        <div class="product">
+
+            <div class="product-image">
+                <img
+                    src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80"
+                    alt="Sausage"
+                >
+            </div>
+
+            <div class="product-info">
+                <h2>🌭 Sausage</h2>
+
+                <div class="affordable">
+                    Affordable Prices
+                </div>
+
+                <p>
+                    Perfect for the braai.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- MINCE -->
+
+        <div class="product">
+
+            <div class="product-image">
+                <img
+                    src="https://images.unsplash.com/photo-1588347818036-558601350947?auto=format&fit=crop&w=800&q=80"
+                    alt="Mince"
+                >
+            </div>
+
+            <div class="product-info">
+                <h2>🥩 Mince</h2>
+
+                <div class="affordable">
+                    Affordable Prices
+                </div>
+
+                <p>
+                    Great for burgers, stews & more.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CHICKEN -->
+
+        <div class="product">
+
+            <div class="product-image">
+                <img
+                    src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80"
+                    alt="Chicken Cuts"
+                >
+            </div>
+
+            <div class="product-info">
+                <h2>🍗 Chicken Cuts</h2>
+
+                <div class="affordable">
+                    Affordable Prices
+                </div>
+
+                <p>
+                    Fresh chicken cuts for every meal.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORDER ================= -->
+
+<section class="order-section" id="order">
+
+    <div class="order-box">
+
+        <div>
+
+            <h2 class="order-title">
+                <span>ORDER</span> YOUR MEAT
+            </h2>
+
+            <p>
+                Choose your meat, select the quantity in kilograms,
+                and place your order.
+            </p>
+
+            <select id="meat">
+                <option value="">Select Meat</option>
+                <option value="Beef">Beef</option>
+                <option value="Sausage">Sausage</option>
+                <option value="Mince">Mince</option>
+                <option value="Chicken Cuts">Chicken Cuts</option>
+            </select>
+
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Quantity (KG)"
+                min="1"
+                step="0.5"
+            >
+
+            <button class="checkout" onclick="addToCart()">
+                🛒 ADD TO ORDER
+            </button>
+
+        </div>
+
+
+        <!-- CART -->
+
+        <div class="cart">
+
+            <h2>🛒 YOUR ORDER</h2>
+
+            <div id="cartItems">
+                <p style="color:#aaa;">
+                    Your cart is empty.<br>
+                    Add some delicious meat!
+                </p>
+            </div>
+
+            <button
+                class="checkout"
+                onclick="sendWhatsAppOrder()"
+            >
+                VIEW CART / CHECKOUT
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3>📍 OUR LOCATION</h3>
+
+            <p>
+                <strong>Hwange, Railways Road</strong>
+            </p>
+
+            <p>
+                Find us easily and get
+                the freshest meat in town!
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>📞 MORE INFO CONTACT</h3>
+
+            <p>
+                <a href="tel:+263773267077">
+                    +263 773267077
+                </a>
+            </p>
+
+            <p>
+                Call us for more information
+                or custom orders.
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>🟢 WHATSAPP ORDERS</h3>
+
+            <p>
+                <a
+                    href="https://wa.me/263773353587"
+                    target="_blank"
+                >
+                    +263 773353587
+                </a>
+            </p>
+
+            <p>
+                Chat with us on WhatsApp
+                to place your order quickly!
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">🥩</div>
+
+        <h3>QUALITY MEAT</h3>
+
+        <p>
+            Carefully selected meat
+            for great taste.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🔪</div>
+
+        <h3>FRESH DAILY</h3>
+
+        <p>
+            Fresh cuts prepared
+            for maximum taste.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🔥</div>
+
+        <h3>PERFECT FOR BRAAI</h3>
+
+        <p>
+            Great for braai, stews,
+            parties & more.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🚚</div>
+
+        <h3>FAST SERVICE</h3>
+
+        <p>
+            Quick and convenient
+            service for customers.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-title">
+        Real Meat, Real Taste, Real Good!
+    </div>
+
+    <p>
+        © 2026 WASHY Meats. All Rights Reserved.
+    </p>
+
+    <p style="margin-top:10px;">
+        Hwange • Railways Road
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    let cart = [];
+
+
+    function addToCart() {
+
+        const meat =
+            document.getElementById("meat").value;
+
+        const quantity =
+            document.getElementById("quantity").value;
+
+
+        if (meat === "") {
+
+            alert("Please select the type of meat.");
+
+            return;
+        }
+
+
+        if (quantity === "" || quantity <= 0) {
+
+            alert("Please enter the quantity in KG.");
+
+            return;
+        }
+
+
+        cart.push({
+            meat: meat,
+            quantity: quantity
+        });
+
+
+        document.getElementById("meat").value = "";
+        document.getElementById("quantity").value = "";
+
+
+        displayCart();
+
+    }
+
+
+    function displayCart() {
+
+        const cartItems =
+            document.getElementById("cartItems");
+
+
+        if (cart.length === 0) {
+
+            cartItems.innerHTML =
+                `<p style="color:#aaa;">
+                    Your cart is empty.<br>
+                    Add some delicious meat!
+                </p>`;
+
+            return;
+        }
+
+
+        cartItems.innerHTML = "";
+
+
+        cart.forEach((item, index) => {
+
+            cartItems.innerHTML += `
+
+                <div class="cart-item">
+
+                    <span>
+                        <strong>${item.meat}</strong>
+                        <br>
+                        ${item.quantity} KG
+                    </span>
+
+                    <span
+                        class="remove"
+                        onclick="removeItem(${index})"
+                    >
+                        REMOVE
+                    </span>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    function removeItem(index) {
+
+        cart.splice(index, 1);
+
+        displayCart();
+
+    }
+
+
+    function sendWhatsAppOrder() {
+
+        if (cart.length === 0) {
+
+            alert("Please add meat to your order first.");
+
+            return;
+        }
+
+
+        let message =
+            "Hello WASHY Meats!%0A%0A" +
+            "I would like to place an order:%0A%0A";
+
+
+        cart.forEach((item, index) => {
+
+            message +=
+                `${index + 1}. ${item.meat} - ${item.quantity} KG%0A`;
+
+        });
+
+
+        message +=
+            "%0AThank you!";
+
+
+        const whatsappNumber =
+            "263773353587";
+
+
+        const url =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            message;
+
+
+        window.open(url, "_blank");
+
+    }
+
+</script>
+
+</body>
+</html>
